@@ -68,7 +68,7 @@ def checkDate(preDate, curDate): # 빈 날짜 채우기
         return blankDates
 
 
-filePath = "E:\\P\\EventMoa\\주간행사표샘플.hwp"
+filePath = "..\\주간행사표샘플.hwp"
 hwp = Hwp()
 hwp.open(filePath)
 
@@ -98,7 +98,6 @@ try:
 
             elif(blank == False):
                 event[eventRow].append("")
-                print(event[eventRow])
                 hwp.put_field_text(str(row), changeEvent(event[eventRow]))
                 row = row + 1
                 eventRow = eventRow + 1
@@ -116,5 +115,5 @@ try:
 
 except IndexError:
     # 파일 저장 및 닫기
-    hwp.SaveAs("E:\\P\\EventMoa\\output.hwp")
+    hwp.SaveAs("..\\output.hwp")
     hwp.Quit()
